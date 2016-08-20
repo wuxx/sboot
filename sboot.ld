@@ -6,6 +6,8 @@ __svc_stack_size__  = 0x0400;
 __sys_stack_size__  = 0x0400;
 __stacks_total_size__   = __und_stack_size__ + __abt_stack_size__ + __fiq_stack_size__ + __irq_stack_size__ + __svc_stack_size__ + __sys_stack_size__;
 
+ENTRY(_start)
+
 MEMORY
 {
         SYSTEM_RAM :  org = 0x200000, len = 0x06000000

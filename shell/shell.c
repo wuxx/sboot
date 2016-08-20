@@ -144,7 +144,7 @@ PRIVATE s32 cmd_help()
 {
     u32 i;
     for(i=0; i<(sizeof(ci)/sizeof(ci[0])); i++) {
-        uart_printf("%s:\t\t\t%s\n", ci[i].name, ci[i].desc);
+        uart_printf("%s:\t\t%s\n", ci[i].name, ci[i].desc);
     }
     return 0;
 }

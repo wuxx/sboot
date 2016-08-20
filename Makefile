@@ -81,10 +81,10 @@ TARGET_SECINFO = $(BUILD)/$(TARGET).secinfo #section info
 LDS = $(ROOT)/$(TARGET).ld
 
 #-march=armv6
-CFLAGS  += -mcpu=arm1176jzf-s -fno-builtin -mno-thumb-interwork -mfloat-abi=soft -Wall -g -I$(INCLUDE_DIR)
+CFLAGS  += -mcpu=arm1176jzf-s -fno-builtin -mno-thumb-interwork -mfloat-abi=soft -ffunction-sections -Wall -Os -g -I$(INCLUDE_DIR)
 ASFLAGS += -mcpu=arm1176jzf-s 
 
-LDFLAGS = -T $(LDS) -Map $(TARGET_MAP) -nostdlib -nostartfiles $(LIBGCC) 
+LDFLAGS = -T $(LDS) -Map $(TARGET_MAP) -nostdlib -nostartfiles --gc-sections $(LIBGCC) 
 
 .PHONY: build_all clean tags
 
